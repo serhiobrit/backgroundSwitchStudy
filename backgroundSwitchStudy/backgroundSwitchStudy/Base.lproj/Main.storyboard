@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="backgroundSwitchStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="secondImage" translatesAutoresizingMaskIntoConstraints="NO" id="t1J-Zl-fow">
+                                <rect key="frame" x="20" y="161" width="374" height="462"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAB-HP-lM6">
+                                <rect key="frame" x="182.5" y="729" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchImage:" destination="BYZ-38-t0r" eventType="valueChanged" id="0Is-Xb-fVL"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t1J-Zl-fow" secondAttribute="trailing" constant="20" id="Fdb-Xc-gTX"/>
+                            <constraint firstItem="LAB-HP-lM6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GTa-B7-3jK"/>
+                            <constraint firstItem="LAB-HP-lM6" firstAttribute="top" secondItem="t1J-Zl-fow" secondAttribute="bottom" constant="106" id="RRd-XO-NgA"/>
+                            <constraint firstItem="t1J-Zl-fow" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UC3-me-DIL"/>
+                            <constraint firstItem="t1J-Zl-fow" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="117" id="Vcy-Xk-LiU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LAB-HP-lM6" secondAttribute="bottom" constant="102" id="gCs-Jn-vBF"/>
+                            <constraint firstItem="t1J-Zl-fow" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ln6-K7-wao"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="t1J-Zl-fow" id="pEa-WA-0Id"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="78.348214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="secondImage" width="750" height="1125"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
