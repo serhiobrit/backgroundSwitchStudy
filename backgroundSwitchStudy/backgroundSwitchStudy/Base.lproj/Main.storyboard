@@ -40,6 +40,7 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="t1J-Zl-fow" id="pEa-WA-0Id"/>
+                        <outlet property="switchOption" destination="LAB-HP-lM6" id="ugq-id-5Js"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

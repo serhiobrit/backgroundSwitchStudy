@@ -10,30 +10,33 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
-    
+    @IBOutlet weak var switchOption: UISwitch!
+
     let userData = UserDefaults.standard
-    
-    enum Colors: String {
-        case light
-        case dark
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var color: UIColor? {
-            guard let name = UserDefaults.standard.object(forKey: "backgroundColor") as? String,
-                let color = Colors(rawValue: name) else { return nil }
-            switch color {
-            case .light: return .systemBackground
-            case .dark: return .darkGray
-            }
-        }
-                
-        if color == nil {
-            self.view.backgroundColor = .systemBackground
+        
+        let colorName = userData.string(forKey: "backgroundColor")
+        let imageName = userData.string(forKey: "image")
+        let switcher = userData.string(forKey: "switchOption")
+        
+        if colorName == "dark" {
+            self.view.backgroundColor = .darkGray
         } else {
-            self.view.backgroundColor = color
+            self.view.backgroundColor = .systemBackground
+        }
+        
+        if imageName == "firstImage" {
+            image.image = UIImage (named: "firstImage")
+        } else {
+            image.image = UIImage (named: "secondImage")
+        }
+        
+        if switcher == "on" {
+            switchOption.isOn = true
+        } else {
+            switchOption.isOn = false
         }
         
     }
@@ -46,20 +49,19 @@ class ViewController: UIViewController {
             self.view.backgroundColor = .darkGray
             image.image = UIImage (named: "firstImage")
             
-            userData.setValue(".dark", forKey: "backgroundColor")
-            
-//            userData.setValue(UIColor.darkGray, forKey: "backgroundColor")
-//            userData.setValue("firstImage", forKey: "image")
+            userData.setValue("dark", forKey: "backgroundColor")
+            userData.setValue("firstImage", forKey: "image")
+            userData.setValue("on", forKey: "switchOption")
             
         } else {
             self.view.backgroundColor = .systemBackground
             image.image = UIImage (named: "secondImage")
             
-//            userData.setValue(UIColor.systemBackground, forKey: "backgroundColor")
-//            userData.setValue("secondImage", forKey: "image")
+            userData.setValue("light", forKey: "backgroundColor")
+            userData.setValue("secondImage", forKey: "image")
+            userData.setValue("off", forKey: "switchOption")
             
         }
-        
     }
     
 }
